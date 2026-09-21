@@ -138,3 +138,205 @@ Relevant Context
 LLM
        ↓
 Grounded Answer
+
+
+⚙️ Setup Instructions
+Prerequisites
+
+Make sure the following software is installed:
+
+Python 3.10 or higher
+Node.js 18 or higher
+npm
+Git
+Tesseract OCR (for scanned/image documents)
+1. Clone the Repository
+git clone https://github.com/TAMBESANTOSH077/multi-agent-document-ppt-ai.git
+cd multi-agent-document-ppt-ai
+2. Backend Setup
+
+Open a terminal and navigate to the backend:
+
+cd backend
+
+Create a Python virtual environment:
+
+python -m venv .venv
+
+Activate the virtual environment on Windows:
+
+.\.venv\Scripts\activate
+
+Install the required Python dependencies:
+
+pip install -r requirements.txt
+3. Configure Environment Variables
+
+Create a .env file inside the backend directory:
+
+backend/.env
+
+Add the following configuration:
+
+APP_NAME=Multi-Agent Document AI
+APP_VERSION=1.0.0
+DEBUG=True
+
+MODEL_NAME=gemini-2.5-flash
+EMBEDDING_MODEL=gemini-embedding-001
+
+GOOGLE_API_KEY=your_google_api_key_here
+TAVILY_API_KEY=your_tavily_api_key_here
+
+CHROMA_PERSIST_DIRECTORY=./storage/chroma
+UPLOAD_DIRECTORY=./storage/uploads
+GENERATED_DIRECTORY=./storage/generated
+VERSION_DIRECTORY=./storage/versions
+
+TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
+
+Security: Never commit the .env file or real API keys to GitHub. Use .env.example with placeholder values only.
+
+4. Start the Backend
+
+From the backend directory:
+
+python -m uvicorn app.main:app --reload
+
+The backend will be available at:
+
+http://127.0.0.1:8000
+
+FastAPI Swagger documentation:
+
+http://127.0.0.1:8000/docs
+5. Frontend Setup
+
+Open a new terminal and navigate to the frontend:
+
+cd frontend
+
+Install the frontend dependencies:
+
+npm install
+
+Start the React development server:
+
+npm run dev
+
+The frontend will normally be available at:
+
+http://localhost:5173
+📖 Usage Guidelines
+1. Open the Application
+
+Open the frontend in your browser:
+
+http://localhost:5173
+
+The application provides an AI chat interface for interacting with uploaded documents.
+
+2. Upload a Document
+
+Upload one of the supported formats:
+
+PDF
+DOCX
+PPTX
+PNG
+JPG/JPEG
+
+The system extracts the content and analyzes the document.
+
+3. Ask Questions About the Document
+
+After uploading a document, use the AI Assistant to ask questions.
+
+Example
+What is the purpose of this document?
+
+Other examples:
+
+Summarize this document.
+What are the major requirements mentioned in the document?
+What technologies are mentioned in the document?
+
+The system routes the request through the appropriate agent workflow.
+
+4. Use RAG
+
+The application can retrieve relevant information from the uploaded document using the RAG pipeline.
+
+Example
+According to the uploaded document, what are the key project requirements?
+RAG Workflow
+User Question
+      ↓
+Query Embedding
+      ↓
+Vector Search
+      ↓
+Relevant Document Chunks
+      ↓
+LLM Context
+      ↓
+Grounded Answer
+5. Generate a PowerPoint
+
+After uploading a document, request a presentation using natural language.
+
+Example
+Create a professional 8-slide PowerPoint presentation
+from my uploaded document. Make it editable.
+
+The PPT Generator processes the document and creates an editable .pptx file.
+
+6. Generate a Document
+
+Users can also request a professional DOCX document.
+
+Example
+Create a professional proposal based on my uploaded document.
+
+The Document Generator creates an editable DOCX file.
+
+7. Conversational Editing
+
+Generated artifacts can be modified using natural-language instructions.
+
+Examples
+Add an executive summary.
+Make the presentation more concise.
+Add a competitive analysis section.
+Add a conclusion slide.
+Update the report using the latest web information.
+
+The system processes the editing request while maintaining the existing artifact context.
+
+8. Web Research
+
+For requests requiring current information, the Research Agent can perform web research.
+
+Example
+Research the latest Generative AI trends and create a summary.
+
+The research results can be combined with information retrieved from uploaded documents.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
