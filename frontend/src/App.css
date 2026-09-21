@@ -1,0 +1,894 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f4f7fb;
+    color: #172033;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%
+        ),
+        #f4f7fb;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    width: 100%;
+
+    min-height: 170px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 35px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554
+        );
+
+    color: white;
+
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.18);
+}
+
+
+.header h1 {
+    margin: 0 0 10px;
+
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+
+.header p {
+    margin: 0;
+
+    font-size: 17px;
+
+    color: #cbd5e1;
+}
+
+
+.tech-badge {
+    padding: 12px 20px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: min(1180px, 92%);
+
+    margin: 35px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   BACKEND STATUS
+========================================================= */
+
+.status-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 30px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+
+.status-card h2 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+}
+
+
+.status-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+.online,
+.offline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+.online {
+    color: #15803d;
+
+    background: #dcfce7;
+}
+
+
+.offline {
+    color: #b91c1c;
+
+    background: #fee2e2;
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+========================================================= */
+
+.success-card {
+    padding: 22px 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #f0fdf4
+        );
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(22, 163, 74, 0.05);
+}
+
+
+.success-card h3 {
+    margin: 0 0 8px;
+
+    color: #166534;
+
+    font-size: 18px;
+}
+
+
+.success-card p {
+    margin: 0;
+
+    color: #166534;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PPT GENERATOR
+========================================================= */
+
+.ppt-generator-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 26px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fafc
+        );
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.08);
+}
+
+
+.ppt-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background: #dbeafe;
+
+    font-size: 29px;
+}
+
+
+.ppt-generator-card h2 {
+    margin: 0 0 6px;
+
+    color: #172554;
+
+    font-size: 20px;
+}
+
+
+.ppt-generator-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.generate-ppt-button {
+    margin-left: auto;
+
+    min-width: 170px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.generate-ppt-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+.generate-ppt-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-card {
+    padding: 17px 20px;
+
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+
+    border-radius: 14px;
+
+    color: #be123c;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   AI ASSISTANT AREA
+========================================================= */
+
+.chat-wrapper {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.07);
+}
+
+
+.chat-header {
+    padding: 25px 28px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8fafc
+        );
+}
+
+
+.chat-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 23px;
+}
+
+
+.chat-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.chat-messages {
+    min-height: 280px;
+    max-height: 500px;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    background: #f8fafc;
+}
+
+
+.message {
+    display: flex;
+
+    margin-bottom: 18px;
+}
+
+
+.message.user {
+    justify-content: flex-end;
+}
+
+
+.message.assistant {
+    justify-content: flex-start;
+}
+
+
+.message-bubble {
+    max-width: 75%;
+
+    padding: 13px 17px;
+
+    border-radius: 16px;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+.message.user .message-bubble {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+}
+
+
+.message.assistant .message-bubble {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    color: #334155;
+
+    border-bottom-left-radius: 4px;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   CHAT INPUT
+========================================================= */
+
+.chat-input-area {
+    display: flex;
+    gap: 12px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.chat-input {
+    flex: 1;
+
+    min-height: 48px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    resize: vertical;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.chat-input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+.chat-send-button {
+    min-width: 95px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.chat-send-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+
+.chat-send-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ARTIFACT
+========================================================= */
+
+.artifact-card {
+    padding: 25px 28px;
+
+    background: white;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(22, 163, 74, 0.06);
+}
+
+
+.artifact-card h3 {
+    margin: 0 0 8px;
+
+    color: #166534;
+}
+
+
+.artifact-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+.artifact-download-button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    background: #16a34a;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+
+.artifact-download-button:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   AGENT STATUS
+========================================================= */
+
+.agent-status-container {
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+
+.agent-status-container h2 {
+    margin: 0 0 20px;
+
+    font-size: 22px;
+}
+
+
+.agent-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px, 1fr)
+        );
+
+    gap: 14px;
+}
+
+
+.agent-card {
+    padding: 17px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+}
+
+
+.agent-card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 6px;
+
+    font-weight: 700;
+}
+
+
+.agent-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    box-shadow:
+        0 0 0 4px rgba(22, 163, 74, 0.10);
+}
+
+
+.agent-card-status {
+    margin-left: 18px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FILE UPLOAD
+========================================================= */
+
+.upload-card {
+    padding: 30px;
+
+    background: white;
+
+    border: 2px dashed #cbd5e1;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.upload-card:hover {
+    border-color: #2563eb;
+
+    background: #f8fbff;
+}
+
+
+.upload-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+.upload-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 24px;
+}
+
+
+.upload-card p {
+    margin: 0 0 20px;
+
+    color: #64748b;
+}
+
+
+.upload-button {
+    display: inline-flex;
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 30px 5%;
+    }
+
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+
+    .container {
+        width: 94%;
+    }
+
+
+    .status-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .ppt-generator-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .generate-ppt-button {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    .message-bubble {
+        max-width: 90%;
+    }
+
+
+    .chat-input-area {
+        flex-direction: column;
+    }
+
+
+    .chat-send-button {
+        width: 100%;
+    }
+
+}

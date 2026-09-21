@@ -1,0 +1,1142 @@
+/* =========================================================
+   MULTI-AGENT DOCUMENT AI
+   Premium AI SaaS Dashboard UI
+   ========================================================= */
+
+:root {
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #172033;
+    background: #f5f7fb;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(79, 70, 229, 0.08),
+            transparent 30%
+        ),
+        #f5f7fb;
+}
+
+button,
+textarea,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app {
+    min-height: 100vh;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10172a 0%,
+            #172554 48%,
+            #1e1b4b 100%
+        );
+
+    color: white;
+
+    padding: 28px 48px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.18);
+
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -120px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 102, 241, 0.18);
+
+    filter: blur(10px);
+}
+
+.header > div {
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+}
+
+.header p {
+    margin: 8px 0 0;
+
+    color: #c7d2fe;
+
+    font-size: 14px;
+}
+
+.tech-badge {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    color: #e0e7ff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    backdrop-filter: blur(10px);
+}
+
+.tech-badge::before {
+    content: "●";
+
+    color: #4ade80;
+
+    font-size: 10px;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(
+        1280px,
+        calc(100% - 48px)
+    );
+
+    margin: 30px auto 60px;
+}
+
+/* =========================================================
+   BACKEND STATUS
+   ========================================================= */
+
+.status-card {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 24px;
+
+    margin-bottom: 22px;
+
+    background: white;
+
+    border:
+        1px solid #e6eaf2;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+.status-card h2 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.status-card p {
+    margin: 4px 0 0;
+
+    color: #8a94a6;
+
+    font-size: 12px;
+}
+
+.online,
+.offline {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.online {
+    color: #16a34a;
+}
+
+.offline {
+    color: #dc2626;
+}
+
+/* =========================================================
+   UPLOAD AREA
+   ========================================================= */
+
+.upload-container,
+.file-upload,
+.upload-card {
+    position: relative;
+
+    background: white;
+
+    border:
+        1px solid #e5e9f2;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.05);
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+}
+
+/* Existing upload dropzone */
+
+.upload-zone {
+    min-height: 270px;
+
+    margin: 18px;
+
+    border:
+        1.5px dashed #c7d2fe;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fafbff,
+            #ffffff
+        );
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.upload-zone:hover {
+    border-color: #6366f1;
+
+    background:
+        #fafaff;
+
+    transform: translateY(-1px);
+}
+
+.upload-zone svg,
+.upload-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 15px;
+
+    color: #6366f1;
+}
+
+.upload-zone h2 {
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 750;
+
+    color: #182033;
+}
+
+.upload-zone p {
+    margin: 7px 0 18px;
+
+    color: #8a94a6;
+
+    font-size: 13px;
+}
+
+.upload-zone button,
+.choose-file-button {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1
+        );
+
+    color: white;
+
+    padding: 11px 21px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.upload-zone button:hover,
+.choose-file-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 24px rgba(79, 70, 229, 0.3);
+}
+
+/* =========================================================
+   SELECTED FILE
+   ========================================================= */
+
+.selected-file {
+    margin: 0 18px 18px;
+
+    padding: 13px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e6eaf2;
+
+    border-radius: 12px;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.selected-file::before {
+    content: "📄";
+
+    font-size: 18px;
+}
+
+/* =========================================================
+   SUCCESS
+   ========================================================= */
+
+.success-card {
+    position: relative;
+
+    padding: 20px 22px;
+
+    margin-bottom: 22px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid #bbf7d0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #f7fee7
+        );
+
+    box-shadow:
+        0 5px 18px rgba(22, 163, 74, 0.05);
+}
+
+.success-card h3 {
+    margin: 0 0 6px;
+
+    color: #15803d;
+
+    font-size: 15px;
+}
+
+.success-card p {
+    margin: 0;
+
+    color: #4b6352;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
+
+.agent-section,
+.agent-status,
+.workflow-card {
+    background: white;
+
+    border:
+        1px solid #e5e9f2;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.agent-section h2,
+.agent-status h2,
+.workflow-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    letter-spacing: -0.3px;
+}
+
+.workflow-subtitle {
+    color: #8a94a6;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.agent-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+}
+
+.agent-card {
+    padding: 16px;
+
+    border:
+        1px solid #edf0f5;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fafc
+        );
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 8px 22px rgba(79, 70, 229, 0.08);
+}
+
+.agent-card h3 {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #1e293b;
+}
+
+.agent-card p {
+    margin: 5px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.agent-card .status,
+.agent-status-dot {
+    display: inline-flex;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    margin-right: 7px;
+
+    box-shadow:
+        0 0 0 3px #dcfce7;
+}
+
+/* =========================================================
+   PPT GENERATOR
+   ========================================================= */
+
+.ppt-generator-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 23px;
+
+    margin-bottom: 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+
+    border:
+        1px solid #c7d2fe;
+
+    overflow: hidden;
+}
+
+.ppt-generator-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -80px;
+    top: -100px;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.ppt-icon {
+    position: relative;
+    z-index: 1;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.12);
+}
+
+.ppt-generator-card > div:nth-child(2) {
+    position: relative;
+    z-index: 1;
+}
+
+.ppt-generator-card h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    color: #1e1b4b;
+}
+
+.ppt-generator-card p {
+    margin: 5px 0 0;
+
+    color: #636b84;
+
+    font-size: 12px;
+}
+
+.generate-ppt-button {
+    position: relative;
+    z-index: 2;
+
+    margin-left: auto;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.generate-ppt-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.32);
+}
+
+.generate-ppt-button:disabled {
+    background: #a5b4fc;
+
+    cursor: wait;
+
+    box-shadow: none;
+}
+
+/* =========================================================
+   ARTIFACT
+   ========================================================= */
+
+.artifact-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #ecfdf5
+        );
+
+    border:
+        1px solid #bbf7d0;
+
+    border-radius: 18px;
+}
+
+.artifact-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    font-size: 26px;
+}
+
+.artifact-content h2 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+
+    color: #14532d;
+}
+
+.artifact-content p {
+    margin: 4px 0;
+
+    color: #527061;
+
+    font-size: 12px;
+}
+
+.artifact-content strong {
+    color: #166534;
+
+    font-size: 13px;
+}
+
+.download-button {
+    display: inline-flex;
+
+    margin-top: 12px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    background: #16a34a;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.download-button:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-card {
+    margin-bottom: 22px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   AI CHAT
+   ========================================================= */
+
+.chat-card {
+    background: white;
+
+    border:
+        1px solid #e5e9f2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+.chat-header {
+    padding: 23px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e293b
+        );
+
+    color: white;
+}
+
+.chat-header h2 {
+    margin: 0;
+
+    font-size: 19px;
+}
+
+.chat-header p {
+    margin: 5px 0 0;
+
+    color: #aab5c8;
+
+    font-size: 12px;
+}
+
+.chat-messages {
+    height: 420px;
+
+    overflow-y: auto;
+
+    padding: 22px;
+
+    background:
+        #f8fafc;
+}
+
+.empty-chat {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.empty-chat > div {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #eef2ff;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.empty-chat p {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.empty-chat small {
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.message {
+    display: flex;
+
+    margin-bottom: 14px;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.assistant-message {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 72%;
+
+    padding: 12px 15px;
+
+    border-radius: 14px;
+
+    background: white;
+
+    border:
+        1px solid #e2e8f0;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    white-space: pre-wrap;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.03);
+}
+
+.user-message .message-bubble {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1
+        );
+
+    border: none;
+
+    border-bottom-right-radius: 4px;
+}
+
+.assistant-message .message-bubble {
+    border-bottom-left-radius: 4px;
+}
+
+.error-message {
+    color: #b91c1c;
+
+    background: #fff1f2;
+
+    border-color: #fecdd3;
+}
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+.chat-input-area {
+    display: flex;
+
+    gap: 10px;
+
+    padding: 16px;
+
+    border-top:
+        1px solid #edf0f5;
+
+    background: white;
+}
+
+.chat-input-area textarea {
+    flex: 1;
+
+    resize: none;
+
+    min-height: 48px;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid #dbe1ea;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: #172033;
+
+    background: #f8fafc;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chat-input-area textarea:focus {
+    border-color: #818cf8;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+.chat-input-area button {
+    width: 85px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.chat-input-area button:disabled {
+    background: #cbd5e1;
+
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .agent-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 22px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .container {
+        width:
+            calc(100% - 24px);
+
+        margin-top: 18px;
+    }
+
+    .agent-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ppt-generator-card {
+        flex-wrap: wrap;
+    }
+
+    .generate-ppt-button {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .artifact-card {
+        align-items: flex-start;
+    }
+
+    .message-bubble {
+        max-width: 88%;
+    }
+
+    .chat-input-area {
+        flex-direction: column;
+    }
+
+    .chat-input-area button {
+        width: 100%;
+        min-height: 44px;
+    }
+}

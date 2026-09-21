@@ -1,0 +1,11 @@
+.env
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+
+backend/storage/chroma/
+backend/storage/uploads/
+backend/storage/generated/
+backend/storage/versions/
