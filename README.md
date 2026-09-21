@@ -142,7 +142,153 @@ Grounded Answer
 
 
 
+⚙️ Setup Instructions
+Prerequisites
 
+Install the following:
+
+Python 3.10+
+Node.js 18+
+npm
+Git
+Tesseract OCR (required for OCR/image-based documents)
+1. Clone the Repository
+git clone https://github.com/TAMBESANTOSH077/multi-agent-document-ppt-ai.git
+cd multi-agent-document-ppt-ai
+2. Backend Setup
+cd backend
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+3. Configure Environment Variables
+
+Create:
+
+backend/.env
+
+Add:
+
+APP_NAME=Multi-Agent Document AI
+APP_VERSION=1.0.0
+DEBUG=True
+
+MODEL_NAME=gemini-2.5-flash
+EMBEDDING_MODEL=gemini-embedding-001
+
+GOOGLE_API_KEY=your_google_api_key_here
+TAVILY_API_KEY=your_tavily_api_key_here
+
+CHROMA_PERSIST_DIRECTORY=./storage/chroma
+UPLOAD_DIRECTORY=./storage/uploads
+GENERATED_DIRECTORY=./storage/generated
+VERSION_DIRECTORY=./storage/versions
+
+TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
+
+Never commit the real .env file or API keys to GitHub.
+
+4. Start the Backend
+python -m uvicorn app.main:app --reload
+
+Backend:
+
+http://127.0.0.1:8000
+
+API documentation:
+
+http://127.0.0.1:8000/docs
+5. Frontend Setup
+
+Open a new terminal:
+
+cd frontend
+npm install
+npm run dev
+
+Frontend:
+
+http://localhost:5173
+📖 Usage Guidelines
+1. Upload a Document
+
+Open the application and upload a supported file:
+
+PDF
+DOCX
+PPTX
+PNG
+JPG/JPEG
+
+The system extracts the document content and analyzes its structure.
+
+2. Ask Questions
+
+After uploading a document, ask questions through the AI Assistant.
+
+Example:
+
+What is the purpose of this document?
+What are the major requirements mentioned in the document?
+Summarize the document.
+3. Use RAG
+
+Ask a question that requires information from the uploaded document:
+
+According to the uploaded document, what are the key project requirements?
+
+The RAG workflow retrieves relevant document chunks and provides them as context to the AI model.
+
+4. Generate a PowerPoint
+
+After uploading a document, enter:
+
+Create a professional 8-slide PowerPoint presentation from my uploaded document. Make it editable.
+
+The PPT Generator creates an editable .pptx presentation.
+
+5. Generate a Document
+
+Example:
+
+Create a professional proposal based on my uploaded document.
+
+The Document Generator creates an editable DOCX file.
+
+6. Conversational Editing
+
+Generated artifacts can be modified using natural-language instructions.
+
+Examples:
+
+Add an executive summary.
+Make the presentation more concise.
+Add a competitive analysis section.
+Add a conclusion slide.
+Update the report using the latest web information.
+7. Web Research
+
+For current information, ask:
+
+Research the latest Generative AI trends and create a summary.
+
+The Research Agent retrieves current information and combines it with relevant document knowledge.
+
+8. Recommended Demo Workflow
+Upload Document
+       ↓
+Ask Document Question
+       ↓
+Supervisor Agent
+       ↓
+Document / RAG Agent
+       ↓
+Generate Answer
+       ↓
+Generate PPT
+       ↓
+Validate Output
+       ↓
+Edit Generated Artifact
 
 
 
