@@ -6,6 +6,7 @@ The project is built as a modular full-stack application with a React frontend a
 
 ---
 
+
 ## 🚀 Project Overview
 
 This project implements a Multi-Agent AI system for intelligent document and presentation generation.
