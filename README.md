@@ -5,8 +5,6 @@ An AI-powered multi-agent chatbot that analyzes uploaded documents and presentat
 The project is built as a modular full-stack application with a React frontend and FastAPI backend.
 
 ---
-
-
 ## 🚀 Project Overview
 
 This project implements a Multi-Agent AI system for intelligent document and presentation generation.
